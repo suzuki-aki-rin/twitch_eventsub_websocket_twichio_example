@@ -17,5 +17,5 @@ await self.get_channel(payload.data.broadcaster.name).send('start')
 ```
 
 ## License
-MIT
-Licence of codes of Twitchio is MIT.
+- MIT
+- Licence of codes of Twitchio is MIT.
