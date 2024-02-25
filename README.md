@@ -10,7 +10,8 @@ The license of the code is unknown.
 
 ## Points
 - No need for callback server.
-- Scopes of access tokens: chat:edit chat:read moderator:read:followers
+- Scopes of access tokens: chat:edit chat:read moderator:read:followers<BR>
+I confirmed events of start and follow.
 - About subscription of follow, payload.data.broadcaster.channel is NONE.
 So, codes is like below to send message.
 ```
