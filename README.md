@@ -9,9 +9,10 @@ The license of the code is unknown.
 
 
 ## Points
-- scope of access tokens: chat:edit chat:read moderator:read:followers
+- No need for callback server.
+- Scopes of access tokens: chat:edit chat:read moderator:read:followers
 - About subscription of follow, payload.data.broadcaster.channel is NONE.
-So, to send message, codes is like below.
+So, codes is like below to send message.
 ```
 await self.get_channel(payload.data.broadcaster.name).send('start')
 ```
