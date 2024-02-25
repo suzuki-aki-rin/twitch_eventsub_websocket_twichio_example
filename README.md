@@ -15,3 +15,7 @@ So, to send message, codes is like below.
 ```
 await self.get_channel(payload.data.broadcaster.name).send('start')
 ```
+
+## License
+MIT
+Licence of codes of Twitchio is MIT.
