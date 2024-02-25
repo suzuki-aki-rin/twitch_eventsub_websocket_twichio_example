@@ -1,4 +1,3 @@
-import os
 from twitchio.ext import commands, eventsub
 
 CHANNELS = ['STREAMING CHANNEL']
@@ -15,7 +14,7 @@ class Bot(commands.Bot):
         # initial_channels can also be a callable which returns a list of strings...
         super().__init__(token=BOT_TOKEN, prefix=BOT_PREFIX, initial_channels=CHANNELS)
 
-        # for event subscription
+        ###### for event subscription
         self.esclient = eventsub.EventSubWSClient(self)
 
 
@@ -53,7 +52,7 @@ class Bot(commands.Bot):
         print(userdata[0].id)
         
 
-    # event subscription
+    ##### event subscription
     async def event_eventsub_notification(self, payload: eventsub.NotificationEvent) -> None:
         print('Received event!')
         #print(payload.headers.message_id)
@@ -88,6 +87,7 @@ class Bot(commands.Bot):
         await self.esclient.subscribe_channel_update(broadcaster=CHANNEL_ID, token=STREAMER_TOKEN)
         await self.esclient.subscribe_channel_follows_v2(broadcaster=CHANNEL_ID, moderator=CHANNEL_ID, token=STREAMER_TOKEN)
 
+    ##### event subscription END
 
     @commands.command()
     async def hello(self, ctx: commands.Context):
@@ -109,7 +109,9 @@ class Bot(commands.Bot):
 
 
 bot = Bot()
-# for event subscription
+
+##### for event subscription
 bot.loop.create_task(bot.sub())
+
 bot.run()
 # bot.run() is blocking and will stop execution of any below code here until stopped or closed.
