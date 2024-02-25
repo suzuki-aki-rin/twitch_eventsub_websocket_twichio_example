@@ -1,3 +1,4 @@
+##### eventsub for event subscription
 from twitchio.ext import commands, eventsub
 
 CHANNELS = ['STREAMING CHANNEL']
